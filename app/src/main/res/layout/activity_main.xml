@@ -20,9 +20,11 @@
             style="@style/NameStyle" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/star_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_Margin"
+            android:contentDescription="@string/Yellow_star"
             app:srcCompat="@android:drawable/btn_star_big_on" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
