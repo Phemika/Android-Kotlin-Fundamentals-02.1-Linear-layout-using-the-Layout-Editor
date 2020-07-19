@@ -23,14 +23,13 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/nickname_edit"
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/what_is_your_nickname"
-            android:inputType="textPersonName"
-            android:text="Name"
+            android:inputType="textPersonName|text"
             android:textAlignment="center" />
 
         <ImageView
