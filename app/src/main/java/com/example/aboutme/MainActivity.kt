@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val myName: MyName = MyName("Aleks Haecky")
+    private val myName: MyName = MyName("Phemika sripiriyakul")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
 
         binding.apply {
-            nicknameText.text = nicknameEdit.text.toString()
+            myName?.nickname = nicknameEdit.text.toString()
+            invalidateAll()
             nicknameEdit.visibility = View.GONE
             doneButton.visibility = View.GONE
             nicknameText.visibility = View.VISIBLE
@@ -60,18 +61,23 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.nickname_edit)
         val doneButton = findViewById<Button>(R.id.done_button)
 
-        editText.visibility = View.VISIBLE
-        doneButton.visibility = View.VISIBLE
-        view.visibility = View.GONE
+        binding.apply {
+            myName?.nickname = nicknameEdit.text.toString()
+            invalidateAll()
 
-        // Set the focus to the edit text.
-        editText.requestFocus()
+            editText.visibility = View.VISIBLE
+            doneButton.visibility = View.VISIBLE
+            view.visibility = View.GONE
 
-        // Show the keyboard.
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(editText, 0)
+            // Set the focus to the edit text.
+            editText.requestFocus()
+
+            // Show the keyboard.
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(editText, 0)
+        }
+
     }
-
 }
 
 

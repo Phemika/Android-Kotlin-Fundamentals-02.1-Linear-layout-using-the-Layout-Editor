@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data variable
+    <data>
+        <variable
         name="myName"
-        type="com.example.android.aboutme.MyName" />
+            type="com.example.aboutme.MyName"/>
 
     </data>
 
@@ -46,6 +47,7 @@
 
         <TextView
             android:id="@+id/nickname_text"
+            android:text="@={myName.nickname}"
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
